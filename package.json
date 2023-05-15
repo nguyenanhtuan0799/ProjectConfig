@@ -8,7 +8,11 @@
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
-    "podm1": "cd ios && arch -x86_64 pod install"
+    "podm1": "cd ios && arch -x86_64 pod install",
+    "android-dev": "react-native run-android  --variant=devDebug  --appIdSuffix dev",
+    "android-dev-build": "cd android && ./gradlew clean && ENVFILE=.env.development ./gradlew assembleRelease",
+    "android-release": "react-native run-android --variant=prodDebug --appIdSuffix prod",
+    "android-release-build": "cd android && ./gradlew clean && ENVFILE=.env.product ./gradlew assembleRelease"
   },
   "dependencies": {
     "appcenter": "4.4.5",
@@ -16,7 +20,8 @@
     "appcenter-crashes": "4.4.5",
     "react": "18.2.0",
     "react-native": "0.71.7",
-    "react-native-config": "^1.5.0"
+    "react-native-config": "^1.5.0",
+    "react-navtive-segment-control": "^0.3.2"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

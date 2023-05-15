@@ -5,38 +5,29 @@
  * @format
  */
 
-import React from 'react';
+import React, {useState} from 'react';
 import Config from 'react-native-config';
 
-import type {PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
-
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
+import {SafeAreaView, Text, View} from 'react-native';
+import {SegmentControl} from 'react-navtive-segment-control';
 
 function App(): JSX.Element {
+  const data = [
+    {label: 'Left', icon: 'left'},
+    {label: 'Right', icon: 'right'},
+  ];
+  const [activeTab, setActiveTab] = useState(0);
   return (
     <SafeAreaView>
       <View>
         <Text>{Config.API_URL}</Text>
         <Text>{Config.GOOGLE_MAPS_API_KEY}</Text>
+        <Text>asdkjaslkd</Text>
+        <SegmentControl
+          segments={data}
+          activeTab={activeTab}
+          labelField="label"
+        />
       </View>
     </SafeAreaView>
   );

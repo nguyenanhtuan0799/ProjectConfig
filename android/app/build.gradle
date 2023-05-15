@@ -1,5 +1,15 @@
+
+
 apply plugin: "com.android.application"
 apply plugin: "com.facebook.react"
+
+project.ext.envConfigFiles = [
+        dev: ".env.development",
+        prod: ".env.production",
+        anothercustombuild: ".env",
+]
+
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
 
 import com.android.build.OutputFile
 
@@ -94,6 +104,7 @@ android {
     compileSdkVersion rootProject.ext.compileSdkVersion
 
     namespace "com.projectconfigapp"
+    flavorDimensions "default"
     defaultConfig {
         applicationId "com.projectconfigapp"
         minSdkVersion rootProject.ext.minSdkVersion
@@ -101,7 +112,24 @@ android {
         versionCode 1
         versionName "1.0"
     }
-
+    productFlavors{
+        dev{
+            minSdkVersion rootProject.ext.minSdkVersion
+            applicationId "com.projectConfigApp.dev"
+            targetSdkVersion rootProject.ext.targetSdkVersion
+            resValue "string", "build_config_package", "com.projectconfigapp"
+            versionCode 1
+            versionName "1.0"
+        }
+        prod{
+            minSdkVersion rootProject.ext.minSdkVersion
+            applicationId "com.projectConfigApp.prod"
+            targetSdkVersion rootProject.ext.targetSdkVersion
+            resValue "string", "build_config_package", "com.projectconfigapp"
+            versionCode 1
+            versionName "1.0"
+        }
+    }
     splits {
         abi {
             reset()
@@ -168,3 +196,7 @@ dependencies {
 }
 
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
+
+
+
+
