@@ -8,7 +8,7 @@
 import React, {useState} from 'react';
 import Config from 'react-native-config';
 
-import {SafeAreaView, Text, View} from 'react-native';
+import {Button, SafeAreaView, Text, View} from 'react-native';
 import {SegmentControl} from 'react-navtive-segment-control';
 
 function App(): JSX.Element {
@@ -27,6 +27,12 @@ function App(): JSX.Element {
           segments={data}
           activeTab={activeTab}
           labelField="label"
+        />
+        <Button
+          title="Click vao crash"
+          onPress={() => {
+            throw new Error('This is a test javascript crash!');
+          }}
         />
       </View>
     </SafeAreaView>
