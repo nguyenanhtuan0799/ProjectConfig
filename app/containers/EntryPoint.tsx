@@ -1,5 +1,13 @@
-import React, {useEffect, useState} from 'react';
-import {Button, SafeAreaView, ScrollView, Text, View} from 'react-native';
+import React, {useEffect, useRef, useState} from 'react';
+import {
+  AppState,
+  Button,
+  SafeAreaView,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import Config from 'react-native-config';
 import {SegmentControl} from 'react-navtive-segment-control';
 import {useDispatch, useSelector} from 'react-redux';
@@ -8,6 +16,7 @@ import {
   getPostSelector,
 } from '../redux/selectors/postSelector';
 import {getPostList} from '../redux/reducers/postSlice';
+import PushNotification from 'react-native-push-notification';
 
 const EntryPoint = () => {
   const dispatch = useDispatch<any>();
@@ -18,12 +27,37 @@ const EntryPoint = () => {
     {label: 'Right', icon: 'right'},
   ];
   const [activeTab, setActiveTab] = useState(0);
+
+  const createChannel = () => {
+    PushNotification.createChannel(
+      {
+        channelId: 'test-Notification',
+        channelName: 'This is test Notification',
+      },
+      created => console.log(`createChannel returned '${created}'`),
+    );
+  };
+
   useEffect(() => {
     dispatch(getPostList());
+    createChannel();
   }, []);
+
   if (loading) {
     return <Text>loading....</Text>;
   }
+
+  const handleNotification = (item: any) => {
+    // PushNotification.cancelAllLocalNotifications();
+    // PushNotification.cancelLocalNotifications({id:item?.id});
+
+    PushNotification.localNotification({
+      channelId: 'test-Notification',
+      title: 'Click test notification',
+      message: 'This is test',
+    });
+  };
+
   return (
     <SafeAreaView>
       <ScrollView>
@@ -49,9 +83,15 @@ const EntryPoint = () => {
         <View>
           {postList?.map((item: any) => {
             return (
-              <View key={item.title} style={{margin: 6}}>
-                <Text>{item?.title}</Text>
-              </View>
+              <TouchableOpacity
+                key={item.title}
+                onPress={() => {
+                  handleNotification(item);
+                }}>
+                <View style={{margin: 6}}>
+                  <Text>{item?.title}</Text>
+                </View>
+              </TouchableOpacity>
             );
           })}
         </View>

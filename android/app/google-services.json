@@ -1,0 +1,118 @@
+{
+  "project_info": {
+    "project_number": "870189126959",
+    "project_id": "projectconfigapp",
+    "storage_bucket": "projectconfigapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:870189126959:android:382e89ae4a61954d91fdda",
+        "android_client_info": {
+          "package_name": "com.projectConfigApp.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "870189126959-ghdpfvog849bn0geev0c04k9cq4qmmkv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCP8TlONk_06iT4CKv48yDJyOAZwqpjXE8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "870189126959-ghdpfvog849bn0geev0c04k9cq4qmmkv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "870189126959-e9313hbh1jf1t6v50vtu3hn9m4i0u2q5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.projectConfigApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:870189126959:android:438eef003306a48e91fdda",
+        "android_client_info": {
+          "package_name": "com.projectConfigApp.prod"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "870189126959-ghdpfvog849bn0geev0c04k9cq4qmmkv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCP8TlONk_06iT4CKv48yDJyOAZwqpjXE8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "870189126959-ghdpfvog849bn0geev0c04k9cq4qmmkv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "870189126959-e9313hbh1jf1t6v50vtu3hn9m4i0u2q5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.projectConfigApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:870189126959:android:5daf1927259ab44f91fdda",
+        "android_client_info": {
+          "package_name": "com.projectconfigapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "870189126959-ghdpfvog849bn0geev0c04k9cq4qmmkv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCP8TlONk_06iT4CKv48yDJyOAZwqpjXE8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "870189126959-ghdpfvog849bn0geev0c04k9cq4qmmkv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "870189126959-e9313hbh1jf1t6v50vtu3hn9m4i0u2q5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.projectConfigApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

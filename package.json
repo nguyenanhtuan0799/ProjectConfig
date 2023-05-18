@@ -15,6 +15,7 @@
     "android-release-build": "cd android && ./gradlew clean && ENVFILE=.env.product ./gradlew assembleRelease"
   },
   "dependencies": {
+    "@react-native-community/push-notification-ios": "^1.11.0",
     "@reduxjs/toolkit": "^1.9.5",
     "appcenter": "4.4.5",
     "appcenter-analytics": "4.4.5",
@@ -23,6 +24,7 @@
     "react": "18.2.0",
     "react-native": "0.71.7",
     "react-native-config": "^1.5.0",
+    "react-native-push-notification": "^8.1.1",
     "react-navtive-segment-control": "^0.3.3",
     "react-redux": "^8.0.5",
     "redux-logger": "^3.0.6"
@@ -35,6 +37,7 @@
     "@tsconfig/react-native": "^2.0.2",
     "@types/jest": "^29.2.1",
     "@types/react": "^18.0.24",
+    "@types/react-native-push-notification": "^8.1.1",
     "@types/react-test-renderer": "^18.0.0",
     "@types/redux-logger": "^3.0.9",
     "babel-jest": "^29.2.1",
